@@ -62,9 +62,8 @@ let STORE = [
  
 
   
+  function createThing () {
 
-
-  function createThing (questionNunber) {
     $('.question').text(STORE[questionNumber].question);
 
     
@@ -85,7 +84,7 @@ let STORE = [
 
   function startQuiz() {
       $('.quiz-page').hide();
-      $('.final-page').hide();
+      
       $('#feedback-message').hide();
       $('#nextBtn').hide()
 
@@ -151,6 +150,7 @@ let STORE = [
       feedback.text("Incorrect!");
     } else if (userAnswer === "unanswered") {
       feedback.text("You better choose a pokemon!");
+
     }
 
   }
@@ -161,7 +161,7 @@ let STORE = [
       
       $('.quiz-page').show()
       questionNumber++;
-      $('.questionContainer').replaceWith(createThing());
+      createThing();
       $('#feedback-message').hide();
       $('#nextBtn').hide();
 
@@ -169,8 +169,20 @@ let STORE = [
   }
 
 
+
+  function resetQuiz () {
+    let score = 0;
+    let questionNumber = 0;
+  }
   
 
+  function AnotherTry () {
+    $('.finalBtn').on('click', function(e){
+      $('finalContainer').empty();
+      resetQuiz();
+      startQuiz();
+    });
+  }
 
   
 
@@ -180,5 +192,5 @@ let STORE = [
 checkAns();
 questionFeedback();
 nextQuestion();
- 
+AnotherTry();
  
