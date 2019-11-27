@@ -103,13 +103,11 @@ function startQuiz() {
   $('#startBtn').on('click', function (e){
     e.preventDefault();
     resetQuiz();
+  
   $('.start-page').hide();
   $('.quiz-page').show();
-  
-  
-   
-  
-});
+  createThing();
+  });
 
 }
 
@@ -127,26 +125,20 @@ $('#radioAnswers').on ("submit", function (e){
   $('#nextBtn').show();
   $('.quiz-page').hide();
   questionFeedback();
-  
-  
-
-});
+  });
 }
 
 function checkAns(answer) {
 let correctChoice = STORE[questionNumber].correctAnswer;
 
 if(answer === correctChoice) {
-  
   questionFeedback(true);
-  
   } else if (answer === undefined) {
     questionFeedback("unanswered");
   } else {
     questionFeedback(false);
     
-  }
- 
+};
 }
 
 
@@ -155,31 +147,27 @@ function questionFeedback(userAnswer) {
 let feedback = $('#feedback-message');
 if (userAnswer === true) {
   score++ 
-  
   feedback.text("Meowth that's right!");
 } else if (userAnswer === false) {
   feedback.text("Incorrect!");
 } else if (userAnswer === "unanswered") {
   feedback.text("You better choose a pokemon!");
-
-}
-
+};
 }
 
 
 function nextQuestion () {
 $('#nextBtn').on('click', function(e){
- 
-  
   questionNumber++;
   console.log(questionNumber)
   if (questionNumber === 10) {
-    score === 0;
-    questionNumber === 0;
+    
+    console.log(score)
+    console.log(questionNumber)
     $('.finalBtn').show();
     $('#play-again').show();
     $('.finalContainer').show();
-    
+    $('#final-score').text('Your final score is: ' + score + '/10');
     $('.quiz-page').hide()
     $('#nextBtn').hide();
     $('#feedback-message')
@@ -198,18 +186,14 @@ $('#nextBtn').on('click', function(e){
 
 
 function AnotherTry () {
-
-
-$('.finalBtn').on('click', function(e){
+  
+  $('.finalBtn').on('click', function(e){
   e.preventDefault();
   $('finalContainer').empty();
-  
-  resetQuiz();
   startQuiz();
   $('.quiz-page').hide();
   $('.start-page').show();
-  
-});
+ });
 }
 
 function resetQuiz () {

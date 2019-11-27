@@ -11,28 +11,34 @@
       <div class="title">
       	<h1>The Pokemon Quiz!</h1>
       </div>
+      <section> 
+        <img class="pokeball" src="img/pokeball.png" alt="pokeball">
+      </section>
     </header>
     
     <!--<start-page>-->
 
     <section class="start-page">
-      <div class="start-matter">
-      	<h4>
+      <div class="starter">
+        <h4>
 	    	How well do you know your Pokemon?  Click "Start" to begin your quiz.  
-	    </h4>
-	    <input type="button" id="startBtn" value="Click to start">	
-      </div>
-    </section>
+      </h4>
+    </div>
+      <img class="oak" src="img/oak.png" alt="professor-oak">
+      <input class="button" id="startBtn" value="Click to start">	
+
+     </section>
     
 
-    
+    <br>
     <section class="quiz-page">
     	<div class="questionContainer">
         
           <h3 class="question"></h3>
           
         </div>
-	      
+        
+        <fieldset>
 	      <form id="radioAnswers" >
 
 	        <label for="option0" class="answers">
@@ -47,11 +53,12 @@
 	        <label for="option3" class="answers">
 	          <input class="radioBtn" type="radio" id="option3" name="userPick" required="required"><span class="choices" id="choice3"></span>
           </label>
-          
+        </fieldset>
+        <br>
 	        <div class="score-container">
 	        	<p class="status">Question: <span class="current-question"></span></p>
       	  		<p class="score">Your Score: <span class="current-score"></span></p>
-	        	<input type="submit" id="submitBtn" value="Submit your answer">
+	        	<input class = "button" type="submit" id="submitBtn" value="Submit your answer">
           
             <section class="response"></section>
             
@@ -65,8 +72,8 @@
 
 
     <section class="popup">
-        <span id="feedback-message"></span>
-        <input type="button" id="nextBtn" value="Next question">
+        <span class ="feedback" id="feedback-message"></span>
+        <input class="button" id="nextBtn" value="Next question">
     </section>
     
     
