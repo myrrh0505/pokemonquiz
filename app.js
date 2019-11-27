@@ -1,3 +1,4 @@
+// Array to store all question and answer information
 let STORE = [
   {
     question:"Who is Ash's first pokemon?",
@@ -44,7 +45,7 @@ let STORE = [
   },
   {
     question:"Where is the elite four located?",
-    answers: ["Pallet Town", "Fuschia city", "Vermillion city", "Indigo Plateu"],
+    answers: ["Pallet Town", "Fuschia city", "Vermillion city", "Indigo Plateau"],
     correctAnswer: "Indigo Plateau"
   },
   {
@@ -55,23 +56,20 @@ let STORE = [
   ];
 
 
-
+//Variables containing score and question number
 let score = 0;
 let questionNumber = 0;
 
 
-
-
+//This function is used to render all questions, answer choices, and score/question counters
 function createThing () {
 
 $('.question').text(STORE[questionNumber].question);
 
-
- $('#choice0').text(STORE[questionNumber].answers[0]);
- $('#choice1').text(STORE[questionNumber].answers[1]);
- $('#choice2').text(STORE[questionNumber].answers[2]);
- $('#choice3').text(STORE[questionNumber].answers[3]);
-
+$('#choice0').text(STORE[questionNumber].answers[0]);
+$('#choice1').text(STORE[questionNumber].answers[1]);
+$('#choice2').text(STORE[questionNumber].answers[2]);
+$('#choice3').text(STORE[questionNumber].answers[3]);
 
 $('#option0').val( STORE[questionNumber].answers[0] );
 $('#option1').val( STORE[questionNumber].answers[1] );
@@ -79,19 +77,16 @@ $('#option2').val( STORE[questionNumber].answers[2] );
 $('#option3').val( STORE[questionNumber].answers[3] );
 
  let currentQuestionNumber = 
- $('.current-question').text(questionNumber + 1 + '/' + STORE.length)
-
+ $('.current-question').text(questionNumber + 1 + '/' + STORE.length);
  let currentScore =
  $('.current-score').text(score + '/' + STORE.length);
 
- $('.radioBtn').prop('checked', false)
+ $('.radioBtn').prop('checked', false);
+ $('#nextBtn').hide();
+}
 
- $('#nextBtn').hide()
 
-
-
- }
-
+//This function begins the quiz and hides the intro page
 function startQuiz() {
   $('.quiz-page').hide();
   $('#play-again').hide();
@@ -99,11 +94,10 @@ function startQuiz() {
   $('#nextBtn').hide()
   $('.finalContainer').hide();
   resetQuiz();
-
+//start button event is here
   $('#startBtn').on('click', function (e){
     e.preventDefault();
     resetQuiz();
-  
   $('.start-page').hide();
   $('.quiz-page').show();
   createThing();
@@ -111,10 +105,8 @@ function startQuiz() {
 
 }
 
-
+//creates an event when submit answer button is clicked
 function submitAns() {
-
-
 $('#radioAnswers').on ("submit", function (e){
   e.preventDefault();
 
@@ -128,6 +120,7 @@ $('#radioAnswers').on ("submit", function (e){
   });
 }
 
+//checks the submitted answer 
 function checkAns(answer) {
 let correctChoice = STORE[questionNumber].correctAnswer;
 
@@ -141,8 +134,7 @@ if(answer === correctChoice) {
 };
 }
 
-
-
+//returns a feedback depending on if the answer was correct or not
 function questionFeedback(userAnswer) {
 let feedback = $('#feedback-message');
 if (userAnswer === true) {
@@ -155,15 +147,12 @@ if (userAnswer === true) {
 };
 }
 
-
+//creates an event when the next question button is clicked
 function nextQuestion () {
 $('#nextBtn').on('click', function(e){
   questionNumber++;
   console.log(questionNumber)
   if (questionNumber === 10) {
-    
-    console.log(score)
-    console.log(questionNumber)
     $('.finalBtn').show();
     $('#play-again').show();
     $('.finalContainer').show();
@@ -171,7 +160,6 @@ $('#nextBtn').on('click', function(e){
     $('.quiz-page').hide()
     $('#nextBtn').hide();
     $('#feedback-message').show()
-    
   }else {
     $('.quiz-page').show()
     createThing();
@@ -180,13 +168,8 @@ $('#nextBtn').on('click', function(e){
   });
 }
 
-
-
-
-
-
+//creates an event for Another try button
 function AnotherTry () {
-  
   $('.finalBtn').on('click', function(e){
   e.preventDefault();
   $('finalContainer').empty();
@@ -196,6 +179,7 @@ function AnotherTry () {
  });
 }
 
+//resets the score and question number back to 0 to restart quiz
 function resetQuiz () {
 score = 0;
 questionNumber = 0;
@@ -203,7 +187,7 @@ questionNumber = 0;
 }
 
 
-
+//runs all the functions above
 createThing();
 startQuiz();
 submitAns()
