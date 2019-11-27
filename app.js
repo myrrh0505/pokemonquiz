@@ -170,7 +170,7 @@ $('#nextBtn').on('click', function(e){
     $('#final-score').text('Your final score is: ' + score + '/10');
     $('.quiz-page').hide()
     $('#nextBtn').hide();
-    $('#feedback-message')
+    $('#feedback-message').show()
     
   }else {
     $('.quiz-page').show()

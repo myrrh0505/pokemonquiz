@@ -15,6 +15,7 @@
   .title {
     text-align: center;
     border: 0.1em #371d0d solid;
+    color: white;
   }
 
   .pokeball { 
@@ -69,6 +70,7 @@
 
   .score-container {
       border: 0.1em #371d0d solid;
+      color: white;
   }
 
   .button {
@@ -92,6 +94,23 @@
     border: 0.1em #371d0d solid;
   }
 
+  
+
+  .charizard {
+    width: 50%; 
+    height: 50%; 
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
   .feedback {
-      text-align: center;
+    
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  #final-score {
+      color: white;
   }
