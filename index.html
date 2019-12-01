@@ -24,8 +24,9 @@
 	    	How well do you know your Pokemon?  Click "Start" to begin your quiz.  
       </h4>
     </div>
+    <input class="button" id="startBtn" value="Click to start">	
       <img class="oak" src="img/oak.png" alt="professor-oak">
-      <input class="button" id="startBtn" value="Click to start">	
+      
 
      </section>
     
@@ -40,21 +41,23 @@
 
         <br>
         
-        <fieldset class="choices">
+        <fieldset>
+        <ul class="choices">
 	      <form id="radioAnswers" >
 
-	        <label for="option0" class="answers">
+	        <li><label for="option0" class="answers">
 	          <input class="radioBtn" type="radio" id="option0" name="userPick" required="required"><span class="choices" id="choice0"></span>
-	        </label>
-	        <label for="option1" class="answers">
+	        </label></li>
+	        <li><label for="option1" class="answers">
 	          <input class="radioBtn" type="radio" id="option1" name="userPick" required="required"><span class="choices" id="choice1"></span>
-	        </label>
-	        <label for="option2" class="answers">
+	        </label></li>
+	        <li><label for="option2" class="answers">
 	          <input class="radioBtn" type="radio" id="option2" name="userPick" required="required"><span class="choices" id="choice2"></span>
-	        </label>
-	        <label for="option3" class="answers">
+	        </label></li>
+	        <li><label for="option3" class="answers">
 	          <input class="radioBtn" type="radio" id="option3" name="userPick" required="required"><span class="choices" id="choice3"></span>
-          </label>
+          </label></li>
+        </ul>
         </fieldset>
         <br>
 	        <div class="score-container">

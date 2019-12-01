@@ -62,7 +62,7 @@ let questionNumber = 0;
 
 
 //This function is used to render all questions, answer choices, and score/question counters
-function createThing () {
+function renderQuestionsAndAnswers () {
 
 $('.question').text(STORE[questionNumber].question);
 
@@ -100,7 +100,7 @@ function startQuiz() {
     resetQuiz();
   $('.start-page').hide();
   $('.quiz-page').show();
-  createThing();
+  renderQuestionsAndAnswers();
   });
 
 }
@@ -162,14 +162,14 @@ $('#nextBtn').on('click', function(e){
     $('#feedback-message').show()
   }else {
     $('.quiz-page').show()
-    createThing();
+    renderQuestionsAndAnswers();
   $('#feedback-message').hide();
 };
   });
 }
 
 //creates an event for Another try button
-function AnotherTry () {
+function RenderQuizReset () {
   $('.finalBtn').on('click', function(e){
   e.preventDefault();
   $('finalContainer').empty();
@@ -188,7 +188,7 @@ questionNumber = 0;
 
 
 //runs all the functions above
-createThing();
+renderQuestionsAndAnswers;
 startQuiz();
 submitAns()
 checkAns();

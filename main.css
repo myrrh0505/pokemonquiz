@@ -120,5 +120,9 @@
   }
 
   .choices {
-    padding: 15px;
+    text-align: center;
+  }
+
+  .popup{
+    text-align: center;
   }
