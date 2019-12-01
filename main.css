@@ -10,6 +10,8 @@
     text-transform: uppercase;
     color: #371d0d;
     background-color: lightcoral;
+    padding: 10px
+    
   }
 
   .title {
@@ -71,6 +73,7 @@
   .score-container {
       border: 0.1em #371d0d solid;
       color: white;
+      padding: 15px
   }
 
   .button {
@@ -92,6 +95,7 @@
 
   .questionContainer {
     border: 0.1em #371d0d solid;
+    padding: 35px;
   }
 
   
@@ -115,6 +119,6 @@
       color: white;
   }
 
-
-
- 
+  .choices {
+    padding: 15px;
+  }

@@ -141,7 +141,7 @@ if (userAnswer === true) {
   score++ 
   feedback.text("Meowth that's right!");
 } else if (userAnswer === false) {
-  feedback.text("Incorrect!");
+  feedback.text("Incorrect! The correct answer is " + STORE[questionNumber].correctAnswer + "!");
 } else if (userAnswer === "unanswered") {
   feedback.text("You better choose a pokemon!");
 };
