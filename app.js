@@ -169,7 +169,7 @@ $('#nextBtn').on('click', function(e){
 }
 
 //creates an event for Another try button
-function RenderQuizReset () {
+function renderQuizReset () {
   $('.finalBtn').on('click', function(e){
   e.preventDefault();
   $('finalContainer').empty();
@@ -194,4 +194,4 @@ submitAns()
 checkAns();
 questionFeedback();
 nextQuestion();
-AnotherTry();
+renderQuizReset ()
